@@ -1065,6 +1065,8 @@ class JMX(object):
 
         proxy.append(JMX._string_prop("HTTPSampler.path", url))
         proxy.append(JMX._string_prop("HTTPSampler.method", method))
+        #Add by yuzho, use java implementation as default TODO: allow user to configure it
+        proxy.append(JMX._string_prop("HTTPSampler.implementation", "Java"))
         proxy.append(JMX._bool_prop("HTTPSampler.use_keepalive", keepalive))
         proxy.append(JMX._bool_prop("HTTPSampler.follow_redirects", True))
 
